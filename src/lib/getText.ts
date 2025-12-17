@@ -56,7 +56,7 @@ export function getText() {
             'Poptávkové a kontaktní prvky',
             'Základní SEO a rychlost',
           ],
-          price: '25 000 – 35 000 Kč',
+          price: '',
         },
         {
           title: 'Výkonný web / aplikace',
@@ -67,7 +67,7 @@ export function getText() {
             'Webová nebo mobilní aplikace',
             'Měření, data a optimalizace',
           ],
-          price: '50 000 – 80 000 Kč',
+          price: '',
         },
         {
           title: 'Aplikace na míru',
@@ -78,7 +78,7 @@ export function getText() {
             'Napojení na externí systémy',
             'Dlouhodobý rozvoj a podpora',
           ],
-          price: 'od 120 000 Kč',
+          price: '',
         },
       ],
     },
