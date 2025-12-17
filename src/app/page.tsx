@@ -2,6 +2,7 @@ import { MotionDiv, MotionH1 } from "../components/Animated";
 import Image from 'next/image';
 import { getText } from '../lib/getText';
 import HeroAnimated from '../components/HeroAnimated';
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function Home() {
   const t = getText();
@@ -23,14 +24,17 @@ export default function Home() {
       </header>
 
       <main>
-        <HeroAnimated
-          title1={t.hero.title1}
-          title2={t.hero.title2}
-          paragraph={t.hero.paragraph}
-          cta={t.hero.cta}
-        />
+        <ScrollReveal className="">
+          <HeroAnimated
+            title1={t.hero.title1}
+            title2={t.hero.title2}
+            paragraph={t.hero.paragraph}
+            cta={t.hero.cta}
+          />
+        </ScrollReveal>
 
-        <section className="py-20">
+        <ScrollReveal className="">
+          <section className="py-20">
           <div className="max-w-5xl mx-auto px-6">
             <MotionDiv className="text-center mb-14">
               <MotionH1
@@ -44,70 +48,46 @@ export default function Home() {
               </MotionH1>
             </MotionDiv>
 
-            <div className="grid md:grid-cols-2 gap-10">
-              <MotionDiv
-                className="bg-white p-8 rounded-xl shadow"
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -6, scale: 1.01 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.12 }}
-              >
+            <ScrollReveal className="grid md:grid-cols-2 gap-10">
+              <div className="bg-white p-8 rounded-xl shadow">
                 <h3 className="font-semibold text-xl mb-3">{t.why.items[0].title}</h3>
                 <p>{t.why.items[0].text}</p>
-              </MotionDiv>
+              </div>
 
-              <MotionDiv
-                className="bg-white p-8 rounded-xl shadow"
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -6, scale: 1.01 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.16 }}
-              >
+              <div className="bg-white p-8 rounded-xl shadow">
                 <h3 className="font-semibold text-xl mb-3">{t.why.items[1].title}</h3>
                 <p>{t.why.items[1].text}</p>
-              </MotionDiv>
+              </div>
 
-              <MotionDiv
-                className="bg-white p-8 rounded-xl shadow"
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -6, scale: 1.01 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
+              <div className="bg-white p-8 rounded-xl shadow">
                 <h3 className="font-semibold text-xl mb-3">{t.why.items[2].title}</h3>
                 <p>{t.why.items[2].text}</p>
-              </MotionDiv>
+              </div>
 
-              <MotionDiv
-                className="bg-white p-8 rounded-xl shadow"
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -6, scale: 1.01 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.24 }}
-              >
+              <div className="bg-white p-8 rounded-xl shadow">
                 <h3 className="font-semibold text-xl mb-3">{t.why.items[3].title}</h3>
                 <p>{t.why.items[3].text}</p>
-              </MotionDiv>
+              </div>
+            </ScrollReveal>
             </div>
-          </div>
-        </section>
+          </section>
+        </ScrollReveal>
 
-        <section className="bg-gray-100 py-20">
+        <ScrollReveal className="">
+          <section className="bg-gray-100 py-20">
           <div className="max-w-5xl mx-auto px-6 text-center">
             <h2 className="text-3xl font-bold mb-8">{t.when.title}</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">{t.when.paragraph}</p>
-          </div>
-        </section>
+            </div>
+          </section>
+        </ScrollReveal>
 
-        <section className="py-20">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-14">Jak vám VELIOR může pomoci</h2>
+        <ScrollReveal className="">
+          <section className="py-20">
+            <div className="max-w-6xl mx-auto px-6">
+              <h2 className="text-3xl font-bold text-center mb-14">Jak vám VELIOR může pomoci</h2>
 
-            <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-3 gap-8">
               <MotionDiv
                 className="bg-white p-8 rounded-xl shadow"
                 initial={{ opacity: 0, y: 12 }}
@@ -161,24 +141,26 @@ export default function Home() {
                 </ul>
                 <p className="font-semibold">{t.services.tiers[2].price}</p>
               </MotionDiv>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ScrollReveal>
 
-        <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-6">
-            <MotionDiv
-              className="text-center max-w-3xl mx-auto mb-16"
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl font-bold mb-4">{t.projects.title}</h2>
-              <p className="text-lg text-gray-600">{t.projects.intro}</p>
-            </MotionDiv>
+        <ScrollReveal className="">
+          <section className="py-20 bg-white">
+            <div className="max-w-6xl mx-auto px-6">
+              <MotionDiv
+                className="text-center max-w-3xl mx-auto mb-16"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-3xl font-bold mb-4">{t.projects.title}</h2>
+                <p className="text-lg text-gray-600">{t.projects.intro}</p>
+              </MotionDiv>
 
-            <div className="grid md:grid-cols-2 gap-12">
+              <div className="grid md:grid-cols-2 gap-12">
               {/* Týmové projekty */}
               <MotionDiv className="bg-gray-50 p-8 rounded-xl shadow">
                 <h3 className="text-xl font-semibold mb-3">{t.projects.team.title}</h3>
@@ -221,24 +203,29 @@ export default function Home() {
                   />
                 </div>
               </MotionDiv>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ScrollReveal>
 
-        <section className="bg-gray-100 py-20">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold mb-6">{t.about.title}</h2>
-            <p className="text-lg text-gray-700">{t.about.text}</p>
-          </div>
-        </section>
+        <ScrollReveal className="">
+          <section className="bg-gray-100 py-20">
+            <div className="max-w-4xl mx-auto px-6 text-center">
+              <h2 className="text-3xl font-bold mb-6">{t.about.title}</h2>
+              <p className="text-lg text-gray-700">{t.about.text}</p>
+            </div>
+          </section>
+        </ScrollReveal>
 
-        <section id="konzultace" className="bg-indigo-700 text-white py-24 text-center">
-          <h2 className="text-3xl font-bold mb-6">{t.ctaSection.title}</h2>
-          <p className="text-lg mb-8">{t.ctaSection.paragraph}</p>
-          <a href="mailto:info@halatao.cz" className="inline-block bg-white text-indigo-700 px-10 py-4 rounded-xl font-semibold hover:bg-gray-100 transition">
-            {t.ctaSection.button}
-          </a>
-        </section>
+        <ScrollReveal className="">
+          <section id="konzultace" className="bg-indigo-700 text-white py-24 text-center">
+            <h2 className="text-3xl font-bold mb-6">{t.ctaSection.title}</h2>
+            <p className="text-lg mb-8">{t.ctaSection.paragraph}</p>
+            <a href="mailto:info@halatao.cz" className="inline-block bg-white text-indigo-700 px-10 py-4 rounded-xl font-semibold hover:bg-gray-100 transition">
+              {t.ctaSection.button}
+            </a>
+          </section>
+        </ScrollReveal>
       </main>
     </div>
   );
