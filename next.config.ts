@@ -1,12 +1,14 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
-  output: "export",              // required for GitHub Pages
-  basePath: "/velior-web",        // repo name
-  assetPrefix: "/velior-web/",    // repo name
+  output: "export",
+  basePath: isProd ? "/velior-web" : "",
+  assetPrefix: isProd ? "/velior-web/" : "",
   reactCompiler: true,
   images: {
-    unoptimized: true,            // GitHub Pages requirement
+    unoptimized: true,
     domains: [
       "upload.wikimedia.org",
       "i.ytimg.com",

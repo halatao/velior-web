@@ -206,10 +206,10 @@ export default function Home() {
 
                 <div className="grid grid-cols-3 gap-6">
                   {[
-                    { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ABB_logo.svg/2560px-ABB_logo.svg.png", alt: "ABB" },
-                    { src: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Astratex_logo.jpg", alt: "Astratex" },
-                    { src: "https://i.ytimg.com/vi/d5DunF5l-AE/maxresdefault.jpg", alt: "Linksoft" },
-                  ].map((logo) => (
+                      { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ABB_logo.svg/2560px-ABB_logo.svg.png", alt: "ABB" },
+                      { src: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Astratex_logo.jpg", alt: "Astratex" },
+                      { src: "https://i.ytimg.com/vi/d5DunF5l-AE/maxresdefault.jpg", alt: "Linksoft" },
+                    ].map((logo) => (
                     <div
                       key={logo.alt}
                       className="h-14 flex items-center justify-center"
@@ -231,15 +231,15 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-3">{t.projects.direct.title}</h3>
                 <p className="text-gray-600 mb-10">{t.projects.direct.text}</p>
 
-                <div className="h-20 flex items-center justify-center">
-                  <Image
-                    src="https://storage.googleapis.com/kasanpelcovafileserver/files/553eacd9-8684-4abe-be76-b97db259688e"
-                    alt="Kasan & Pelcová"
-                    width={200}
-                    height={80}
-                    className="object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition"
-                  />
-                </div>
+                  <div className="h-20 flex items-center justify-center">
+                    <Image
+                      src="https://storage.googleapis.com/kasanpelcovafileserver/files/553eacd9-8684-4abe-be76-b97db259688e"
+                      alt="Kasan & Pelcová"
+                      width={200}
+                      height={80}
+                      className="object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition"
+                    />
+                  </div>
               </MotionDiv>
             </div>
           </div>
