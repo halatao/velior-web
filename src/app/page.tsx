@@ -1,6 +1,7 @@
-import { MotionDiv, MotionH1, MotionP, MotionA } from "../components/Animated";
+import { MotionDiv, MotionH1 } from "../components/Animated";
 import Image from 'next/image';
 import { getText } from '../lib/getText';
+import HeroAnimated from '../components/HeroAnimated';
 
 export default function Home() {
   const t = getText();
@@ -22,47 +23,26 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="bg-white">
-          <div className="max-w-6xl mx-auto px-6 py-24 text-center">
-            <MotionH1
-              className="text-4xl md:text-5xl font-bold mb-6"
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.12 }}
-            >
-              {t.hero.title1}
-              <br className="hidden md:block" />
-              {t.hero.title2}
-            </MotionH1>
-
-            <MotionP
-              className="text-xl text-gray-600 max-w-3xl mx-auto mb-10"
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            >
-              {t.hero.paragraph}
-            </MotionP>
-
-            <MotionA
-              href="#konzultace"
-              className="inline-block bg-indigo-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-indigo-700 transition"
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.03 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.28 }}
-            >
-              {t.hero.cta}
-            </MotionA>
-          </div>
-        </section>
+        <HeroAnimated
+          title1={t.hero.title1}
+          title2={t.hero.title2}
+          paragraph={t.hero.paragraph}
+          cta={t.hero.cta}
+        />
 
         <section className="py-20">
           <div className="max-w-5xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-14">{t.why.title}</h2>
+            <MotionDiv className="text-center mb-14">
+              <MotionH1
+                className="text-3xl font-bold"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                {t.why.title}
+              </MotionH1>
+            </MotionDiv>
 
             <div className="grid md:grid-cols-2 gap-10">
               <MotionDiv
@@ -206,10 +186,10 @@ export default function Home() {
 
                 <div className="grid grid-cols-3 gap-6">
                   {[
-                      { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ABB_logo.svg/2560px-ABB_logo.svg.png", alt: "ABB" },
-                      { src: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Astratex_logo.jpg", alt: "Astratex" },
-                      { src: "https://i.ytimg.com/vi/d5DunF5l-AE/maxresdefault.jpg", alt: "Linksoft" },
-                    ].map((logo) => (
+                    { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/ABB_logo.svg/2560px-ABB_logo.svg.png", alt: "ABB" },
+                    { src: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Astratex_logo.jpg", alt: "Astratex" },
+                    { src: "https://i.ytimg.com/vi/d5DunF5l-AE/maxresdefault.jpg", alt: "Linksoft" },
+                  ].map((logo) => (
                     <div
                       key={logo.alt}
                       className="h-14 flex items-center justify-center"
@@ -231,15 +211,15 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-3">{t.projects.direct.title}</h3>
                 <p className="text-gray-600 mb-10">{t.projects.direct.text}</p>
 
-                  <div className="h-20 flex items-center justify-center">
-                    <Image
-                      src="https://storage.googleapis.com/kasanpelcovafileserver/files/553eacd9-8684-4abe-be76-b97db259688e"
-                      alt="Kasan & Pelcová"
-                      width={200}
-                      height={80}
-                      className="object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition"
-                    />
-                  </div>
+                <div className="h-20 flex items-center justify-center">
+                  <Image
+                    src="https://storage.googleapis.com/kasanpelcovafileserver/files/553eacd9-8684-4abe-be76-b97db259688e"
+                    alt="Kasan & Pelcová"
+                    width={200}
+                    height={80}
+                    className="object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition"
+                  />
+                </div>
               </MotionDiv>
             </div>
           </div>
